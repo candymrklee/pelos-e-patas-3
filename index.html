@@ -147,7 +147,9 @@
     /* RODAPÉ - mantém identidade do anterior */
     .site-footer { background: var(--azul); color: var(--branco); }
     .footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 30px; padding: 38px 0; }
-    .footer-logo { max-height: 82px; width: auto; margin-bottom: 12px; }
+    .footer-brand { display: flex; align-items: flex-start; }
+    .footer-brand a { display: inline-flex; align-items: center; }
+    .footer-logo { display: block; height: auto; max-height: 105px; max-width: 220px; width: auto; object-fit: contain; }
     .footer-grid p { max-width: 300px; font-size: 13px; color: #d9e8f2; line-height: 1.6; }
     .footer-grid h3 { font-size: 15px; color: #ffb27b; margin-bottom: 15px; }
     .footer-grid ul { list-style: none; display: grid; gap: 11px; }
@@ -379,7 +381,11 @@
   <!-- RODAPÉ ORIGINAL, SIMPLIFICADO -->
   <footer class="site-footer">
     <div class="container footer-grid">
-      <div><img class="footer-logo" src="assets/logo2.png" alt="Logo Pelos & Patas"><strong>Pelos & Patas</strong><p>Mais carinho, bem-estar e cuidado para seu melhor amigo.</p></div>
+      <div class="footer-brand">
+        <a href="#inicio" aria-label="Pelos & Patas - Voltar ao início">
+          <img class="footer-logo" src="assets/logo.png" alt="Pelos & Patas - Estética Animal">
+        </a>
+      </div>
       <div><h3>Links rápidos</h3><ul><li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="quem-somos.html">Quem Somos?</a></li></ul></div>
       <div><h3>Fale conosco</h3><ul><li><a href="https://wa.me/5511978128470" target="_blank" rel="noopener noreferrer">WhatsApp: (11) 97812-8470</a></li><li><a href="blog.html">Blog Pet</a></li></ul></div>
     </div>
