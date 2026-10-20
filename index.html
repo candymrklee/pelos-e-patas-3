@@ -437,7 +437,26 @@
  .site-footer .footer-grid { grid-template-columns: 1fr; gap: 26px; }
  .site-footer .footer-grid > .footer-brand, .site-footer .footer-contact-card { grid-column: auto; }
 }
-</style>
+
+    /* Galeria: enquadramento individual para priorizar os rostinhos. */
+    .gallery-item img {
+      object-fit: cover;
+      object-position: center 25%;
+      transform-origin: center 35%;
+    }
+    .gallery-item:nth-child(1) img { object-position: center 28%; }
+    .gallery-item:nth-child(2) img { object-position: center 26%; }
+    .gallery-item:nth-child(3) img { object-position: center 30%; }
+    .gallery-item:nth-child(4) img { object-position: center 12%; }
+    .gallery-item:nth-child(5) img { object-position: center 24%; }
+    .gallery-item:nth-child(6) img { object-position: center 27%; }
+    /* Zoom menor para não cortar as cabeças ao passar o mouse. */
+    .gallery-item:hover img { transform: scale(1.025); }
+    @media (prefers-reduced-motion: reduce) {
+      .gallery-item:hover img { transform: none; }
+    }
+
+  </style>
 </head>
 <body>
 <!-- Ícones em SVG: seguem a cor do texto via currentColor, sem bibliotecas externas -->
