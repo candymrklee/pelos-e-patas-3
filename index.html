@@ -725,6 +725,31 @@ body { font-family: 'Nunito', sans-serif; font-size: 17px; line-height: 1.65; }
   .hero-novo-btn { width: 100%; }
 }
 
+
+/* RODAPÉ: LOGO PROPORCIONAL E ALINHADA COM OS LINKS E O CONTATO */
+.site-footer .footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+}
+.site-footer .footer-brand a {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+}
+.site-footer .footer-logo {
+  display: block;
+  width: clamp(200px, 19vw, 230px);
+  max-width: 100%;
+  max-height: none;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 700px) {
+  .site-footer .footer-brand { align-items: flex-start; }
+  .site-footer .footer-logo { width: clamp(168px, 34vw, 205px); }
+}
 </style>
 </head>
 <body>
@@ -871,7 +896,7 @@ body { font-family: 'Nunito', sans-serif; font-size: 17px; line-height: 1.65; }
 <img alt="Pelos &amp; Patas - Estética Animal" class="footer-logo" src="assets/logo.png"/>
 </a>
 </div>
-<div><h3>Links rápidos</h3><ul><li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="quem-somos.html">Quem Somos?</a></li></ul></div>
+<div><h3>Links rápidos</h3><ul><li><a href="#inicio">Início</a></li><li><a href="#servicos">Serviços</a></li><li><a href="#galeria">Galeria</a></li><li><a href="produtos.html">Produtos</a></li><li><a href="quem-somos.html">Quem Somos?</a></li><li><a href="blog.html">Blog Pet</a></li><li><a href="#contato">Contato</a></li></ul></div>
 <div aria-label="Informações de contato" class="footer-contact-card">
 <div class="footer-contact-item"><h3><svg aria-hidden="true" class="icon" focusable="false"><use href="#icon-map-pin"></use></svg> Onde estamos</h3>
 <p>Av. Edmundo Amaral, 130<br/>Condomínio Nova Era, Hall do Bloco 8<br/>Osasco — SP</p></div>
