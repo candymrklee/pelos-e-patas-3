@@ -750,6 +750,110 @@ body { font-family: 'Nunito', sans-serif; font-size: 17px; line-height: 1.65; }
   .site-footer .footer-brand { align-items: flex-start; }
   .site-footer .footer-logo { width: clamp(168px, 34vw, 205px); }
 }
+
+
+/* ====================================================================
+   TÓPICO 8 — DESIGN RESPONSIVO | PELOS & PATAS
+   ADIÇÃO AO CÓDIGO ORIGINAL (sem apagar ou substituir as regras antigas)
+
+   1. Unidades relativas: %, rem, fr e clamp().
+   2. Imagens fluidas: max-width: 100% e height: auto.
+   3. Media queries: adaptação para tablet e celular.
+   ==================================================================== */
+
+/* Imagens dimensionadas conforme o espaço disponível. As imagens dentro
+   de cards mantêm suas regras específicas de recorte já existentes. */
+img, picture, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Evita que conteúdos longos forcem grids a ultrapassar a largura da tela. */
+.services-grid, .gallery-grid, .footer-grid,
+.services-grid > *, .gallery-grid > *, .footer-grid > * {
+  min-width: 0;
+}
+
+/* Títulos se reorganizam de maneira equilibrada quando falta largura. */
+.section-title, .reviews-heading .section-title {
+  overflow-wrap: break-word;
+}
+
+/* TABLETS: duas colunas para os links e espaço inteiro para o contato.
+   Os serviços já passam a uma coluna pelas regras anteriores. */
+@media (max-width: 768px) {
+  .site-footer .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1rem, 4vw, 2rem);
+    row-gap: 1.75rem;
+  }
+  .site-footer .footer-grid > .footer-brand {
+    grid-column: auto;
+  }
+  .site-footer .footer-contact-card {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+  .services-grid, .reviews-carousel, .gallery-grid {
+    max-width: 100%;
+  }
+}
+
+/* CELULARES: rodapé empilhado, menu rolável dentro da própria barra
+   e botões do banner ajustados sem diminuir excessivamente o texto. */
+@media (max-width: 600px) {
+  .site-footer .footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.6rem;
+  }
+  .site-footer .footer-grid > .footer-brand,
+  .site-footer .footer-contact-card {
+    grid-column: auto;
+  }
+  .sub-nav .container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .hero-novo-botoes {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .hero-novo-btn {
+    max-width: 100%;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+  .footer-contact-item p {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* CELULARES PEQUENOS: uma foto por linha dá mais espaço aos rostinhos.
+   A proporção continua fluida e as legendas permanecem legíveis. */
+@media (max-width: 420px) {
+  .gallery-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+  .gallery-item {
+    aspect-ratio: 4 / 3;
+  }
+  .gallery-item figcaption {
+    font-size: 1rem;
+    padding: 2rem 1rem 0.85rem;
+  }
+  .hero-novo-botoes {
+    width: 100%;
+    gap: 0.75rem;
+  }
+  .hero-novo-btn {
+    flex: 1 1 9rem;
+    min-width: 0;
+  }
+}
+
 </style>
 </head>
 <body>
