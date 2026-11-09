@@ -284,25 +284,24 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
 .a24-status-text {margin-top:16px!important;font-size:13px!important;color:var(--azul)!important;font-weight:800}
 @media(min-width:768px) {
  /* Tópico 10: três colunas a partir do mesmo breakpoint do exemplo. */
- .services-grid {grid-template-columns:repeat(3,minmax(0,1fr));max-width:none;align-items:stretch;gap:18px}
- .services-grid .service-card {min-height:335px;padding:28px 20px}
- .services-grid .service-card.featured {order:0}
- .services-grid .service-card h3 {font-size:24px}
- .services-grid .service-card p {flex:1;font-size:16px}
- .services-grid .featured h3 {font-size:26px}
- .services-grid .featured .price {font-size:43px}
- .services-grid .btn {font-size:15px;padding:12px 10px}
+ .services-grid {grid-template-columns:minmax(0,1fr) minmax(0,1.08fr) minmax(0,1fr);max-width:1100px;align-items:center;gap:10px}
+ .services-grid .service-card {min-height:273px;padding:28px clamp(14px,2.1vw,24px) 30px;justify-content:center}
+ .services-grid .service-card h3 {font-size:22px;margin-bottom:10px}
+ .services-grid .service-card p {flex:0 0 auto;font-size:14px;line-height:1.55}
+ .services-grid .price {font-size:30px}
+ .services-grid .btn {font-size:15px;min-height:49px;padding:10px}
+ .services-grid .service-card.featured {order:0;min-height:408px;padding:34px clamp(16px,2.25vw,26px);box-shadow:0 16px 34px rgb(255 107 11 / .20)}
+ .services-grid .featured .service-label {padding:6px 17px;margin-bottom:15px;font-size:13px}
+ .services-grid .featured h3 {font-size:26px;margin-bottom:10px}
+ .services-grid .featured p {font-size:15px;line-height:1.55}
+ .services-grid .featured .price-row {margin:25px 0 5px}
+ .services-grid .featured .price {font-size:clamp(36px,4vw,44px)}
+ .services-grid .featured .old-price {font-size:16px;color:#777}
+ .services-grid .featured .saving {padding:4px 11px;margin-bottom:20px;font-size:13px}
+ .services-grid .featured .btn {min-height:50px;font-size:16px}
  .a24-monitor {grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:18px 22px}
  .a24-booking-layout {grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:32px;padding:28px}
  .a24-selection .btn {width:auto}
-}
-@media(min-width:1024px) {
- .services-grid .service-card {padding:35px 25px}
- .services-grid .service-card.featured {padding:35px 26px}
- .services-grid .service-card h3 {font-size:25px}
- .services-grid .featured h3 {font-size:30px}
- .services-grid .featured .price {font-size:48px}
- .services-grid .btn {font-size:17px;padding:12px 16px}
 }
 /* Modo de apresentação: deixa a captura da seção livre de sobreposições. */
 .a24-activity .site-header {position:static}
