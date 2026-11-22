@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Produtos para cães e gatos | Pelos &amp; Patas</title>
@@ -413,17 +415,15 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
  .catalog-intro .section-desc{font-size:18px;margin-inline:0}
 }
 .catalog-main{background:#fffaf6;padding:42px 0 64px}
-.catalog-heading{display:flex;align-items:end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
-.catalog-heading h2{font-size:29px;line-height:1.2}
-.catalog-heading p{color:var(--cinza-texto);margin-top:8px}
-.catalog-controls{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.catalog-heading{margin-bottom:8px}
+.catalog-heading h2{font-size:clamp(26px,5vw,32px);line-height:1.2}
+.catalog-heading p{font-size:16px;line-height:1.5;color:var(--cinza-texto);margin-top:8px}
+.catalog-controls{margin-bottom:24px}
 .catalog-filters{display:flex;gap:8px;flex-wrap:wrap}
 .catalog-filters button{min-height:46px;border:1px solid #cadce8;background:white;border-radius:999px;color:var(--azul);padding:9px 19px;font-size:16px;font-weight:800;cursor:pointer}
 .catalog-filters button[aria-pressed=true]{background:var(--azul);border-color:var(--azul);color:white}
 .catalog-filters button:hover{border-color:var(--azul)}
-.catalog-search{display:grid;gap:5px;width:100%;max-width:330px}
-.catalog-search label{font-weight:800;font-size:14px}
-.catalog-search input{min-height:46px;width:100%;padding:10px 16px;border:1px solid #b9cfdf;border-radius:999px;background:white;color:var(--azul-escuro)}
+.catalog-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .catalog-note{font-size:14px;color:var(--cinza-texto);margin-bottom:26px;max-width:760px}
 .product-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
 .product-card{min-width:0;overflow:hidden;border:1px solid #f1e3db;border-radius:22px;background:white;box-shadow:0 8px 24px rgb(6 59 97 / .05);display:flex;flex-direction:column}
@@ -444,11 +444,26 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
 @media(min-width:560px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(min-width:768px){
  .catalog-main{padding:54px 0 80px}
- .catalog-heading h2{font-size:34px}.product-info h3{font-size:26px}.product-info p{font-size:17px}
+ .product-info h3{font-size:26px}.product-info p{font-size:17px}
 }
 @media(min-width:1024px){.product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.product-info h3{font-size:25px}}
 @media(hover:hover){.product-card{transition:transform .2s,box-shadow .2s}.product-card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}}
 @media(prefers-reduced-motion:reduce){.product-card,.btn{transition:none}.product-card:hover,.btn:hover{transform:none}}
+
+/* Enquadramento dos banners alinhado ao index: não altera tipografia ou conteúdo. */
+.catalog-intro{padding:0}
+.catalog-intro .container{position:relative;display:block;width:100%;max-width:1210px;min-height:354px;margin-inline:auto;padding:38px 20px;box-sizing:border-box}
+.catalog-intro .hero-novo-texto{position:relative;inset:auto;width:100%;max-width:580px;margin:0 auto;padding:0;text-align:center}
+.catalog-intro .hero-novo-texto p{max-width:34rem;margin-inline:auto}
+@media(min-width:768px){
+ .catalog-intro .container{height:clamp(286px,37vw,362px);min-height:0;padding:0}
+ .catalog-intro .hero-novo-texto{position:absolute;left:7%;top:17%;width:65%;max-width:none;margin:0;padding:0;text-align:left}
+ .catalog-intro .hero-novo-texto p{margin-inline:0}
+}
+@media(min-width:1024px){
+ .catalog-intro .container{height:auto;aspect-ratio:1210/354}
+ .catalog-intro .hero-novo-texto{left:11.5%;top:20.5%}
+}
 </style></head><body>
 <a class="skip-link" href="#catalogo">Ir para os produtos</a>
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none"><symbol id="icon-map-pin" viewBox="0 0 24 24">
@@ -516,11 +531,12 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
   </div>
  </section>
  <section class="catalog-main" id="catalogo" aria-labelledby="catalog-title"><div class="container">
- <div class="catalog-heading"><div><h2 id="catalog-title">Um carinho a mais para o seu pet</h2><p>Escolha uma categoria e explore o catálogo.</p></div><p id="catalog-status" role="status" aria-live="polite">12 produtos</p></div>
+ <div class="catalog-heading"><div><h2 id="catalog-title">Um carinho a mais para o seu pet</h2><p>Escolha uma categoria e explore o catálogo.</p></div></div>
+ <p class="catalog-status" id="catalog-status" role="status">12 produtos</p>
  <div class="catalog-controls" id="catalog-controls" hidden>
  <div class="catalog-filters" role="group" aria-label="Filtrar produtos por seção">
  <button type="button" data-filter="todos" aria-pressed="true">Todos</button><button type="button" data-filter="caes" aria-pressed="false">Cães</button><button type="button" data-filter="gatos" aria-pressed="false">Gatos</button><button type="button" data-filter="acessorios" aria-pressed="false">Acessórios</button>
- </div><div class="catalog-search"><label for="product-search">Buscar no catálogo</label><input type="search" id="product-search" placeholder="Ex.: ração, coleira, caminha" autocomplete="off" aria-controls="product-grid"></div></div>
+ </div></div>
  <p class="catalog-note">Catálogo demonstrativo: produtos e preços ilustrativos. Confirme valores e disponibilidade com a equipe. As imagens são ilustrações dos itens.</p>
  <div class="product-grid" id="product-grid"><article class="product-card" data-category="caes">
  <div class="product-art"><svg viewBox="0 0 240 210" aria-hidden="true" focusable="false"><ellipse cx="120" cy="185" rx="70" ry="9" fill="#063b61" opacity=".07"/><path d="M79 36h82l12 127a14 14 0 0 1-14 16H81a14 14 0 0 1-14-16z" fill="#fb6d0d"/><path d="M79 36h82v19H79z" fill="#063b61"/><rect x="84" y="79" width="72" height="65" rx="15" fill="#fff"/><ellipse cx="120" cy="122" rx="15" ry="10" fill="#fb6d0d"/><circle cx="105" cy="105" r="5" fill="#fb6d0d"/><circle cx="119" cy="99" r="5" fill="#fb6d0d"/><circle cx="133" cy="105" r="5" fill="#fb6d0d"/><path d="M95 160h50" stroke="#fff" stroke-width="5" stroke-linecap="round"/></svg></div>
@@ -582,7 +598,7 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
  <div class="product-info"><span class="product-tag">Acessórios</span><h3>Caminha aconchegante</h3><p>Unidade · tamanho P · 50 × 40 cm</p>
  <div class="product-buy"><strong class="product-price">R$ 89,90</strong><a class="btn btn-outline" href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Gostaria%20de%20consultar%20a%20disponibilidade%20e%20o%20pre%C3%A7o%20de%20Caminha%20aconchegante." target="_blank" rel="noopener noreferrer" aria-label="Consultar Caminha aconchegante pelo WhatsApp">Consultar produto <span aria-hidden="true">↗</span></a></div></div>
 </article></div>
- <div class="catalog-empty" id="catalog-empty" hidden><h3>Nenhum produto encontrado</h3><p>Tente outra palavra ou selecione outra categoria.</p><button type="button" id="reset-products" class="btn btn-azul">Limpar filtros</button></div>
+ <div class="catalog-empty" id="catalog-empty" hidden><h3>Nenhum produto encontrado</h3><p>Selecione outra categoria para ver mais produtos.</p><button type="button" id="reset-products" class="btn btn-azul">Limpar filtros</button></div>
  <div class="catalog-help"><div><h2>Procurando algo especial?</h2><p>Fale com a gente para consultar opções para o seu pet.</p></div><a class="btn btn-laranja" href="https://wa.me/5511978128470?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20para%20pets." target="_blank" rel="noopener noreferrer">Falar com a equipe</a></div>
  </div></section>
 </main><footer class="site-footer" id="contato">
@@ -673,16 +689,13 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
  const controls = document.getElementById('catalog-controls');
  const buttons = [...document.querySelectorAll('[data-filter]')];
  const products = [...document.querySelectorAll('.product-card')];
- const search = document.getElementById('product-search');
  const status = document.getElementById('catalog-status');
  const empty = document.getElementById('catalog-empty');
- const normalize = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
  let category = 'todos';
  function update() {
-  const query = normalize(search.value);
   let count = 0;
   for (const card of products) {
-   card.hidden = !((category === 'todos' || card.dataset.category === category) && normalize(card.querySelector('.product-info').textContent).includes(query));
+   card.hidden = category !== 'todos' && card.dataset.category !== category;
    if (!card.hidden) count++;
   }
   status.textContent = count + (count === 1 ? ' produto encontrado' : ' produtos encontrados');
@@ -693,13 +706,16 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
   buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   update();
  });
- search.addEventListener('input', update);
  document.getElementById('reset-products').addEventListener('click', () => {
-  category = 'todos'; search.value = '';
+  category = 'todos';
   buttons.forEach(item => item.setAttribute('aria-pressed', String(item.dataset.filter === 'todos')));
-  update(); search.focus();
+  update(); buttons[0].focus();
  });
  controls.hidden = false;
  update();
 })();
 </script></body></html>
+
+
+
+
