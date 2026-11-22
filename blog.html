@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -257,6 +259,21 @@ main a{color:var(--azul);text-decoration:underline;text-underline-offset:2px}
  .blog-intro .hero-novo-texto p{font-size:18px;margin-inline:0}
 }
 @media(prefers-reduced-motion:reduce){.site-header .btn:hover{transform:none}}
+
+/* Enquadramento dos banners alinhado ao index: não altera tipografia ou conteúdo. */
+.blog-intro{padding:0}
+.blog-intro .container{position:relative;display:block;width:100%;max-width:1210px;min-height:354px;margin-inline:auto;padding:38px 20px;box-sizing:border-box}
+.blog-intro .hero-novo-texto{position:relative;inset:auto;width:100%;max-width:580px;margin:0 auto;padding:0;text-align:center}
+.blog-intro .hero-novo-texto p{max-width:34rem;margin-inline:auto}
+@media(min-width:768px){
+ .blog-intro .container{height:clamp(286px,37vw,362px);min-height:0;padding:0}
+ .blog-intro .hero-novo-texto{position:absolute;left:7%;top:17%;width:65%;max-width:none;margin:0;padding:0;text-align:left}
+ .blog-intro .hero-novo-texto p{margin-inline:0}
+}
+@media(min-width:1024px){
+ .blog-intro .container{height:auto;aspect-ratio:1210/354}
+ .blog-intro .hero-novo-texto{left:11.5%;top:20.5%}
+}
 </style>
 </head>
 <body>
@@ -509,3 +526,7 @@ main a{color:var(--azul);text-decoration:underline;text-underline-offset:2px}
 </script>
 </body>
 </html>
+
+
+
+
