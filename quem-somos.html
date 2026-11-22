@@ -465,6 +465,21 @@ h1,h2 {font-weight:900} h3,strong,b {font-weight:800}
 .founder-dot[aria-pressed=true]::before{background:var(--laranja)}
 .founder-live{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 .founder-slide--closeup img{object-fit:cover;object-position:center bottom;transform:scale(1.5);transform-origin:center bottom}
+
+/* Enquadramento dos banners alinhado ao index: não altera tipografia ou conteúdo. */
+.about-hero{padding:0}
+.about-hero-inner{position:relative;display:block;width:100%;max-width:1210px;min-height:354px;margin-inline:auto;padding:38px 20px;box-sizing:border-box}
+.about-hero-copy{position:relative;inset:auto;width:100%;max-width:580px;margin:0 auto;padding:0;text-align:center}
+.about-hero-copy p{max-width:34rem;margin-inline:auto}
+@media(min-width:768px){
+ .about-hero-inner{height:clamp(286px,37vw,362px);min-height:0;padding:0}
+ .about-hero-copy{position:absolute;left:7%;top:17%;width:65%;max-width:none;margin:0;padding:0;text-align:left}
+ .about-hero-copy p{margin-inline:0}
+}
+@media(min-width:1024px){
+ .about-hero-inner{height:auto;aspect-ratio:1210/354}
+ .about-hero-copy{left:11.5%;top:20.5%}
+}
 </style></head><body>
 <a class="skip-about" href="#conteudo">Ir para o conteúdo</a>
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none"><symbol id="icon-map-pin" viewBox="0 0 24 24">
